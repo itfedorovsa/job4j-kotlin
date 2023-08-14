@@ -5,7 +5,7 @@ import io.kotlintest.specs.StringSpec
 
 class CalcTest : StringSpec({
     "1 + 1 = 2" {
-        add(1, 1) shouldBe 2
+        plus(1, 1) shouldBe 2
     }
 
     "1 - 1 = 0" {

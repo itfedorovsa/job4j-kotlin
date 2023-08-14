@@ -1,6 +1,6 @@
 package ru.job4j.base
 
-fun add(first: Int, second: Int): Int {
+fun plus(first: Int, second: Int): Int {
     return first + second
 }
 
@@ -17,7 +17,7 @@ fun divide(first: Int, second: Int): Int {
 }
 
 fun main() {
-    val plus = add(1, 1)
+    val plus = plus(1, 1)
     println("1 + 1 = $plus")
 
     val minus = subtract(1, 1)
