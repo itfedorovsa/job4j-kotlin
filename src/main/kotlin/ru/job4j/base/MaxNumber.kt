@@ -24,15 +24,12 @@ fun max3(first: Int, second: Int) : Int {
     return if (first > second) first else second
 }*/
 
-fun max(first: Int, second: Int) = if (first > second) first else second
+fun max(first: Int, second: Int): Int = if (first > second) first else second
 
-fun max(first: Int, second: Int, third: Int): Int {
-    val temp = max(first, second)
-    return if (temp > third) temp else third
-}
+fun max(first: Int, second: Int, third: Int): Int = max(first, max(second, third))
 
 fun main() {
-    val max = max(2, 5, 3)
+    val max: Int = max(2, 5, 3)
     println("Max of 2, 5, 3 is $max")
 }
 
