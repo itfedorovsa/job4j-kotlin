@@ -10,7 +10,17 @@ class Tracker {
         return tempItem
     }
 
-    fun findById(id: Int): Item? = if (items.size > id) items.get(id) else null
+    fun findById(id: Int): Item? = if (items.size > id) items[id] else null
+        /*var rsl: Item? = null
+        for (name in items) {
+            val item: Item = name
+            if (item.id == id) {
+                rsl = item
+                break
+            }
+        }
+        return rsl*/
+
 
     fun findAll(): List<Item> {
         return items.toList()

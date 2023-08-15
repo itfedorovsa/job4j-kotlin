@@ -11,6 +11,10 @@ class User(
     fun show() {
         println("$name $email")
     }
+
+    private fun calcHash() {
+        println("Some code")
+    }
 }
 
 fun main() {
