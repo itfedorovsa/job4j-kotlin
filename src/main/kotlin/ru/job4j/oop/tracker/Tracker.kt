@@ -1,6 +1,9 @@
 package ru.job4j.oop.tracker
 
-data class Tracker(private var ids: Int = 1, private val items: ArrayList<Item> = ArrayList()) {
+class Tracker {
+    private var ids: Int = 1
+    private val items: ArrayList<Item> = ArrayList()
+
 
     fun add(item: Item): Item {
         item.id = ids++
