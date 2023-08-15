@@ -3,7 +3,7 @@ package ru.job4j.base
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 
-class CalcTest : StringSpec({
+class CalcKotlinTest : StringSpec({
     "1 + 1 = 2" {
         plus(1, 1) shouldBe 2
     }

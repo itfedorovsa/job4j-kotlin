@@ -14,6 +14,7 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.3.2")
     testImplementation("org.slf4j:slf4j-nop:1.7.32")
+    testImplementation("org.assertj:assertj-core:3.11.1")
 }
 
 tasks {
