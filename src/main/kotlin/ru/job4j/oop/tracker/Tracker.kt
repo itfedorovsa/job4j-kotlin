@@ -4,11 +4,10 @@ class Tracker {
     private var ids: Int = 1
     private val items: ArrayList<Item> = ArrayList()
 
-
     fun add(item: Item): Item {
-        item.id = ids++
-        items.add(item)
-        return item
+        val tempItem = item.copy(id = ids++)
+        items.add(tempItem)
+        return tempItem
     }
 
     fun findById(id: Int): Item? {
