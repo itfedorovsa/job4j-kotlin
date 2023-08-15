@@ -16,7 +16,7 @@ class TrackerTest {
     fun whenFindById() {
         val tracker = Tracker()
         tracker.add(Item(0, "ItemName"))
-        assertEquals(tracker.findById(1)?.name, "ItemName")
+        assertEquals(tracker.findById(0)?.name, "ItemName")
     }
 
     @Test
