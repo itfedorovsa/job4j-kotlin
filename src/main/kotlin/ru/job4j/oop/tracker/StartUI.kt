@@ -4,17 +4,33 @@ import java.util.*
 
 object StartUI {
 
-    fun init() {
+    fun init(tracker: Tracker) {
         val scanner = Scanner(System.`in`)
         var run = true
         while (run) {
             showMenu()
             print("Select: ")
             val select: Int = scanner.nextLine().toInt()
-            if (select != 2) {
-                println("User's choice: $select")
-            } else {
-                run = false
+            when (select) {
+                0 -> {
+                    println("=== Create a new Item ===")
+                    print("Enter name: ")
+                    val name: String = scanner.nextLine()
+                    val item = Item(name = name)
+                    val addedItem = tracker.add(item)
+                    println("Added item: $addedItem")
+                }
+
+                1 -> {
+                    println("=== Show all items ===")
+                    val items: List<Item> = tracker.findAll()
+                    if (items.isNotEmpty()) items.forEach { println(it) } else println("Storage is empty")
+                }
+
+                2 -> {
+                    println("=== Program terminated ===")
+                    run = false
+                }
             }
         }
     }
@@ -24,12 +40,14 @@ object StartUI {
             "Add new Item", "Show all items", "Exit Program"
         )
         println("Menu:")
-        for (i in menu.indices) {
-            println(i.toString() + ". " + menu[i])
+        for (index in menu.indices) {
+            println(index.toString() + ". " + menu[index])
         }
     }
+
 }
 
 fun main() {
-    StartUI.init()
+    val tracker = Tracker()
+    StartUI.init(tracker)
 }
