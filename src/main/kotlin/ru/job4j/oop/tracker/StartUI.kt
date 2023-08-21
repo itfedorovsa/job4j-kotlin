@@ -3,11 +3,10 @@ package ru.job4j.oop.tracker
 object StartUI {
 
     fun init(tracker: Tracker, input: Input, actions: List<Action>) {
-
         var run = true
         while (run) {
             showMenu(actions)
-            val select: Int = input.askInt("Select: ")
+            val select = input.askInt("Select: ")
             if (select < 0 || select >= actions.size) {
                 println("Wrong input. Try again.")
                 continue
@@ -19,7 +18,7 @@ object StartUI {
 
     private fun showMenu(actions: List<Action>) {
         println("Menu:")
-        for (index in actions.indices) {
+        for ((index, value) in actions.withIndex()) {
             println("$index. ${actions[index].name()}")
         }
     }
