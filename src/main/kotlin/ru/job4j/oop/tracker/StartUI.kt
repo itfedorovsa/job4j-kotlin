@@ -18,7 +18,7 @@ object StartUI {
 
     private fun showMenu(actions: List<Action>) {
         println("Menu:")
-        for ((index, value) in actions.withIndex()) {
+        for ((index, _) in actions.withIndex()) {
             println("$index. ${actions[index].name()}")
         }
     }
