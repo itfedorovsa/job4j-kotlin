@@ -1,8 +1,10 @@
 package ru.job4j.oop.tracker
 
+import java.util.ArrayList
+
 class Tracker {
     private var ids = 1
-    private val items: ArrayList<Item> = ArrayList()
+    private val items = ArrayList<Item>()
 
     fun add(item: Item): Item {
         val tempItem = item.copy(id = ids++)
