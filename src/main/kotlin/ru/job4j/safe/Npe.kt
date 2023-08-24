@@ -3,11 +3,8 @@ package ru.job4j.safe
 class Npe {
 
     fun print(foo: Foo?) {
-        if (foo != null) {
-            println(foo.name())
-        } else {
-            println("null")
-        }
+        val text = foo?.name()
+        println(text)
     }
 
     class Foo {
