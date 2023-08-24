@@ -1,8 +1,18 @@
 package ru.job4j.lambda
 
-import java.time.LocalDateTime
+import java.time.LocalDate
 
-data class Company(val name: String, val address: String, val created: LocalDateTime = LocalDateTime.now())
+data class Company(
+    val name: String,
+    val address: String,
+    val created: LocalDate = LocalDate.now()
+)
+
+fun toStr(list: List<Company>): List<String> {
+    return list
+        .map { "${it.name}, ${it.address}, ${it.created}" }
+        .toList()
+}
 
 fun main() {
     val companies = listOf(
@@ -10,5 +20,7 @@ fun main() {
         Company("Name2", "Country2, City2"),
         Company("Name3", "Country3, City3")
     )
-    companies.map { "${it.name}, ${it.address}, ${it.created}"}.forEach { println(it)}
+    companies
+        .map { "${it.name}, ${it.address}, ${it.created}" }
+        .forEach { println(it) }
 }
