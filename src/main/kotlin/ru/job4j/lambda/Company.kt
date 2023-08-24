@@ -8,11 +8,9 @@ data class Company(
     val created: LocalDate = LocalDate.now()
 )
 
-fun toStr(list: List<Company>): List<String> {
-    return list
-        .map { "${it.name}, ${it.address}, ${it.created}" }
-        .toList()
-}
+fun toStr(list: List<Company>): List<String> = list
+    .map { "${it.name}, ${it.address}, ${it.created}" }
+    .toList()
 
 fun main() {
     val companies = listOf(
