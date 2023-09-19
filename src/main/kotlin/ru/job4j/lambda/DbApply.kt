@@ -5,7 +5,7 @@ class DbApply {
 
     fun config() {
         pool.apply {
-            driver = "org.postgres.Diver"
+            driver = "org.postgres.Driver"
             url = "jdbc://localhost:5432/job4j"
             username = "postgres"
             password = "password"
